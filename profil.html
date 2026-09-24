@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komposisi Tim Honkai: Star Rail</title>
+</head>
+<body>
+  <header>
+    <h1>Komposisi Tim Honkai: Star Rail</h1>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#daftar-tim">Daftar Tim</a></li>
+        <li><a href="#rancang-tim">Rancang Tim Baru</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="daftar-tim">
+      <h2>Daftar Tim</h2>
+      
+      <table>
+        <caption>Andalan tim untuk menyelesaikan Memory of Chaos</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nama Tim</th>
+            <th scope="col">DPS Utama</th>
+            <th scope="col">Support</th>
+            <th scope="col">Sustain</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Damage over Time (DoT)</th>
+            <td>Kafka & Black Swan</td>
+            <td>Ruan Mei</td>
+            <td>Huohuo</td>
+          </tr>
+          <tr>
+            <th scope="row">Follow-up Attack (FUA)</th>
+            <td>Dr. Ratio & Topaz</td>
+            <td>Robin</td>
+            <td>Aventurine</td>
+          </tr>
+          <tr>
+            <th scope="row">Hypercarry Break</th>
+            <td>Firefly</td>
+            <td>Harmony Trailblazer</td>
+            <td>Gallagher</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="komposisi-tim-hsr.webp" alt="Tangkapan layar saat mengatur posisi empat karakter di layar persiapan pertempuran Honkai Star Rail" width="640" height="360" loading="lazy">
+        <figcaption>Layar penyiapan tim sebelum pertempuran dimulai</figcaption>
+      </figure>
+    </section>
+
+    <section id="rancang-tim">
+      <h2>Rancang Tim Baru</h2>
+      
+      <form action="/simpan-tim" method="post">
+        <p>
+          <label for="nama-tim">Nama Tim</label>
+          <input type="text" id="nama-tim" name="nama-tim" required>
+        </p>
+        <p>
+          <label for="target-cycle">Target Cycle (Batas Putaran)</label>
+          <input type="number" id="target-cycle" name="target-cycle" min="0" max="10" required>
+        </p>
+        <p>
+          <label for="tipe-tim">Tautan Bukti Video (URL)</label>
+          <input type="url" id="tipe-tim" name="tipe-tim" placeholder="https://" required>
+        </p>
+        <button type="submit">Simpan Tim</button>
+      </form>
+    </section>
+    
+    <section id="tentang">
+      <h2>Tentang</h2>
+      <p>Halaman ini dibuat untuk memenuhi Lembar Kerja PABW Pertemuan 3 dengan topik spesifik game.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aubrey kalea noah · 25523196 · 2026</p>
+  </footer>
+</body>
+</html>
