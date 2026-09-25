@@ -4,54 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Komposisi Tim Honkai: Star Rail</title>
+  
+  <!-- Urutan pemuatan CSS: token -> dasar -> tata letak -> komponen -> tema -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
 </head>
 <body>
   <header>
-    <h1>Komposisi Tim Honkai: Star Rail</h1>
-    <nav aria-label="Navigasi utama">
-      <ul>
-        <li><a href="#daftar-tim">Daftar Tim</a></li>
-        <li><a href="#rancang-tim">Rancang Tim Baru</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-      </ul>
-    </nav>
+    <div class="header-baris">
+      <!-- Pengalih tema gelap berbasis checkbox tanpa JavaScript -->
+      <div class="sakelar-tema">
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Ganti Tema Gelap</label>
+      </div>
+
+      <h1>Komposisi Tim HSR</h1>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#daftar-tim">Daftar Tim</a></li>
+          <li><a href="#rancang-tim">Rancang Tim</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section id="daftar-tim">
       <h2>Daftar Tim</h2>
+      <p class="deskripsi-section">Andalan tim untuk menyelesaikan Memory of Chaos.</p>
       
-      <table>
-        <caption>Andalan tim untuk menyelesaikan Memory of Chaos</caption>
-        <thead>
-          <tr>
-            <th scope="col">Nama Tim</th>
-            <th scope="col">DPS Utama</th>
-            <th scope="col">Support</th>
-            <th scope="col">Sustain</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Damage over Time (DoT)</th>
-            <td>Kafka & Black Swan</td>
-            <td>Ruan Mei</td>
-            <td>Huohuo</td>
-          </tr>
-          <tr>
-            <th scope="row">Follow-up Attack (FUA)</th>
-            <td>Dr. Ratio & Topaz</td>
-            <td>Robin</td>
-            <td>Aventurine</td>
-          </tr>
-          <tr>
-            <th scope="row">Hypercarry Break</th>
-            <td>Firefly</td>
-            <td>Harmony Trailblazer</td>
-            <td>Gallagher</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Tabel yang diubah formatnya menjadi kartu di versi desktop/mobile -->
+      <div class="katalog">
+        <div class="kartu">
+          <h3>Damage over Time (DoT)</h3>
+          <p><strong>DPS:</strong> Kafka & Black Swan</p>
+          <p><strong>Support:</strong> Ruan Mei</p>
+          <p><strong>Sustain:</strong> Huohuo</p>
+        </div>
+        <div class="kartu">
+          <h3>Follow-up Attack (FUA)</h3>
+          <p><strong>DPS:</strong> Dr. Ratio & Topaz</p>
+          <p><strong>Support:</strong> Robin</p>
+          <p><strong>Sustain:</strong> Aventurine</p>
+        </div>
+        <div class="kartu">
+          <h3>Hypercarry Break</h3>
+          <p><strong>DPS:</strong> Firefly</p>
+          <p><strong>Support:</strong> Harmony Trailblazer</p>
+          <p><strong>Sustain:</strong> Gallagher</p>
+        </div>
+      </div>
 
       <figure>
         <img src="komposisi-tim-hsr.webp" alt="Tangkapan layar saat mengatur posisi empat karakter di layar persiapan pertempuran Honkai Star Rail" width="640" height="360" loading="lazy">
@@ -62,26 +68,32 @@
     <section id="rancang-tim">
       <h2>Rancang Tim Baru</h2>
       
-      <form action="/simpan-tim" method="post">
-        <p>
+      <form action="#" method="get">
+        <div class="form-kolom">
           <label for="nama-tim">Nama Tim</label>
           <input type="text" id="nama-tim" name="nama-tim" required>
-        </p>
-        <p>
+          <span class="pesan-galat">Nama tim tidak boleh kosong.</span>
+        </div>
+        
+        <div class="form-kolom">
           <label for="target-cycle">Target Cycle (Batas Putaran)</label>
           <input type="number" id="target-cycle" name="target-cycle" min="0" max="10" required>
-        </p>
-        <p>
+          <span class="pesan-galat">Masukkan angka antara 0 hingga 10.</span>
+        </div>
+        
+        <div class="form-kolom">
           <label for="tipe-tim">Tautan Bukti Video (URL)</label>
           <input type="url" id="tipe-tim" name="tipe-tim" placeholder="https://" required>
-        </p>
+          <span class="pesan-galat">Masukkan URL yang valid (dimulai dengan http:// atau https://).</span>
+        </div>
+        
         <button type="submit">Simpan Tim</button>
       </form>
     </section>
     
     <section id="tentang">
       <h2>Tentang</h2>
-      <p>Halaman ini dibuat untuk memenuhi Lembar Kerja PABW Pertemuan 3 dengan topik spesifik game.</p>
+      <p>Halaman ini dibuat untuk memenuhi Lembar Kerja PABW Pertemuan 4 dengan pemanfaatan CSS berbasis token.</p>
     </section>
   </main>
 
