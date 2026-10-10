@@ -15,8 +15,8 @@
     --color-bg:      var(--slate-900);
     --color-fg:      var(--slate-200);
     --color-surface: var(--slate-800);
-    --color-border:  #3185FC;
-    --color-primary: #34E5FF;
+    --color-border:  #334155;
+    --color-primary: #818CF8;
     --color-danger:  #F87171;
     --color-focus:   var(--yellow-500);
     --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
@@ -27,8 +27,8 @@
   --color-bg:      var(--slate-900);
   --color-fg:      var(--slate-200);
   --color-surface: var(--slate-800);
-  --color-border:  #3185FC;
-  --color-primary: #34E5FF;
+  --color-border:  #334155;
+  --color-primary: #818CF8;
   --color-danger:  #F87171;
   --color-focus:   var(--yellow-500);
   --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);

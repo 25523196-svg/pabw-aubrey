@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komposisi Tim Honkai: Star Rail</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Komposisi Tim HSR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#daftar-tim">Daftar Tim</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rancang-tim">Rancang Tim</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        </ul>
+        <div class="form-check form-switch mt-2 mt-lg-0">
+          <input class="form-check-input" type="checkbox" role="switch" id="temaSwitch">
+          <label class="form-check-label" for="temaSwitch">Mode Gelap</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="daftar-tim" class="mb-5">
+      <h2 class="mb-2">Daftar Tim</h2>
+      <p class="text-body-secondary mb-4">Andalan tim untuk menyelesaikan Memory of Chaos.</p>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="card-title h5 text-primary mb-3">Damage over Time (DoT)</h3>
+              <p class="card-text mb-1"><strong>DPS:</strong> Kafka & Black Swan</p>
+              <p class="card-text mb-1"><strong>Support:</strong> Ruan Mei</p>
+              <p class="card-text mb-0"><strong>Sustain:</strong> Huohuo</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="card-title h5 text-primary mb-3">Follow-up Attack (FUA)</h3>
+              <p class="card-text mb-1"><strong>DPS:</strong> Dr. Ratio & Topaz</p>
+              <p class="card-text mb-1"><strong>Support:</strong> Robin</p>
+              <p class="card-text mb-0"><strong>Sustain:</strong> Aventurine</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="card-title h5 text-primary mb-3">Hypercarry Break</h3>
+              <p class="card-text mb-1"><strong>DPS:</strong> Firefly</p>
+              <p class="card-text mb-1"><strong>Support:</strong> Harmony Trailblazer</p>
+              <p class="card-text mb-0"><strong>Sustain:</strong> Gallagher</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="mt-5 border rounded overflow-hidden">
+        <img src="komposisi-tim-hsr.webp" class="img-fluid w-100" alt="Tangkapan layar saat mengatur posisi empat karakter di layar persiapan pertempuran Honkai Star Rail" loading="lazy">
+        <figcaption class="p-2 bg-body-tertiary text-center small text-body-secondary">Layar penyiapan tim sebelum pertempuran dimulai</figcaption>
+      </figure>
+    </section>
+
+    <section id="rancang-tim" class="mb-5">
+      <h2 class="mb-4">Rancang Tim Baru</h2>
+      
+      
+      <div class="card shadow-sm border-secondary-subtle" style="max-width: 450px;">
+        <div class="card-body p-4">
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="nama-tim" class="form-label fw-semibold">Nama Tim</label>
+              <input type="text" class="form-control" id="nama-tim" required>
+              <div class="invalid-feedback">Nama tim tidak boleh kosong.</div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="target-cycle" class="form-label fw-semibold">Target Cycle (Batas Putaran)</label>
+              <input type="number" class="form-control" id="target-cycle" min="0" max="10" required>
+              <div class="invalid-feedback">Masukkan angka antara 0 hingga 10.</div>
+            </div>
+            
+            <div class="mb-4">
+              <label for="tautan-video" class="form-label fw-semibold">Tautan Bukti Video (YouTube)</label>
+              <input type="url" class="form-control" id="tautan-video" name="tautan-video" placeholder="https://www.youtube.com/watch?v=..." pattern="^https:\/\/(www\.)?(youtube\.com|youtu\.be)\/.*$" required>
+              <div class="invalid-feedback">Masukkan tautan YouTube yang valid (contoh: https://www.youtube.com/... atau https://youtu.be/...).</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Simpan Tim</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <section id="tentang" class="mb-5">
+      <h2 class="mb-3">Tentang</h2>
+      <p>Halaman ini dikonversi menggunakan framework Bootstrap 5. Utilitas CSS bawaan Bootstrap menggantikan kelima file CSS terpisah sebelumnya.</p>
+    </section>
+  </main>
+
+  <footer class="container border-top pt-4 mt-5 mb-4 text-center text-body-secondary small">
+    <p class="mb-0">Aubrey &middot; 25523196 &middot; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+    const temaSwitch = document.getElementById('temaSwitch');
+    temaSwitch.addEventListener('change', () => {
+      if (temaSwitch.checked) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

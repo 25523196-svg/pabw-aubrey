@@ -1,6 +1,6 @@
 :root {
-  --indigo-500: #3185FC;
-  --indigo-700: #34E5FF;
+  --indigo-500: #6366F1;
+  --indigo-700: #4338CA;
   --slate-50:   #F8FAFC;
   --slate-200:  #E2E8F0;
   --slate-800:  #1E293B;
@@ -24,7 +24,6 @@
   --text-3xl: 2.25rem;
 }
 
-/* LAPIS 2 — semantik: peran. Mengacu ke lapis 1. */
 :root {
   --color-bg:       var(--slate-50);
   --color-fg:       var(--slate-900);
