@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komposisi Tim Honkai: Star Rail</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body, .navbar, .card-team, .modal-content, .bg-body, .bg-body-tertiary, footer, input, .alert, .border, hr {
+      transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.3s ease !important;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #6366F1, #D946EF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-team {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      transform: translateY(0);
+    }
+    .card-team:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15)!important;
+      border-color: #6366F1;
+    }
+    .modal-body {
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="bg-body-tertiary">
+  
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm mb-5 sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-stars text-primary me-2"></i><span class="text-gradient">Tim HSRku</span>
+      </a>
+      <div class="form-check form-switch mt-2 mt-lg-0 ms-auto">
+        <input class="form-check-input" type="checkbox" role="switch" id="temaSwitch">
+        <label class="form-check-label small fw-semibold" for="temaSwitch"><i class="bi bi-moon-fill ms-1"></i> Gelap</label>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="daftar-tim" class="mb-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-gradient display-6 mb-3">Daftar Komposisi Tim</h2>
+        <p class="text-body-secondary">Koleksi tim andalan untuk menaklukkan Memory of Chaos & Apocalyptic Shadow.</p>
+      </div>
+      
+      <div id="filter-container" class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button class="btn btn-primary rounded-pill px-4 active" data-category="all">Semua Tim</button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-category="dot">DoT</button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-category="fua">Follow-Up (FUA)</button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-category="break">Break</button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-category="hypercarry">Hypercarry</button>
+      </div>
+
+      <div id="empty-state" class="alert alert-warning text-center rounded-4 d-none py-4 shadow-sm">
+        <i class="bi bi-exclamation-circle display-4 d-block mb-2"></i>
+        Belum ada tim yang terdaftar di kategori ini.
+      </div>
+      
+      <div id="team-list" class="row g-4 mb-5">
+      </div>
+
+      <figure class="border rounded-4 shadow-sm overflow-hidden bg-body">
+        <img src="komposisi-tim-hsr.webp" class="img-fluid w-100" alt="Tangkapan layar penyiapan tim sebelum pertempuran Honkai Star Rail" loading="lazy">
+        <figcaption class="p-3 text-center small text-body-secondary fw-semibold">
+          <i class="bi bi-info-circle me-1"></i> Layar penyiapan tim sebelum pertempuran dimulai
+        </figcaption>
+      </figure>
+    </section>
+
+    <hr class="my-5 border-secondary-subtle">
+
+    <section id="rancang-tim" class="mb-5 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="text-center mb-4">
+            <h3 class="fw-bold"><i class="bi bi-plus-circle-dotted text-primary me-2"></i>Rancang Tim Baru</h3>
+            <p class="text-body-secondary small">Simpan ide tim baru Anda ke dalam sistem.</p>
+          </div>
+          
+          <div class="card shadow-sm border-0 rounded-4 bg-body">
+            <div class="card-body p-4 p-md-5">
+              <form id="team-form" novalidate>
+                <div class="mb-3">
+                  <label for="nama-tim" class="form-label fw-semibold">Nama Tim</label>
+                  <input type="text" class="form-control form-control-lg bg-body-tertiary" id="nama-tim" placeholder="Cth: Premium DoT" required>
+                  <div class="invalid-feedback">Nama tim wajib diisi.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="target-cycle" class="form-label fw-semibold">Target Putaran (Cycle)</label>
+                  <input type="number" class="form-control form-control-lg bg-body-tertiary" id="target-cycle" min="0" max="10" placeholder="0 - 10" required>
+                  <div class="invalid-feedback">Masukkan angka antara 0 hingga 10.</div>
+                </div>
+                <div class="mb-4">
+                  <label for="tautan-video" class="form-label fw-semibold">Tautan Bukti (YouTube)</label>
+                  <input type="url" class="form-control form-control-lg bg-body-tertiary" id="tautan-video" pattern="^https:\/\/(www\.)?(youtube\.com|youtu\.be)\/.*$" placeholder="https://youtube.com/..." required>
+                  <div class="invalid-feedback">Masukkan tautan YouTube yang valid.</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold rounded-pill shadow-sm">
+                  <i class="bi bi-floppy me-2"></i>Simpan Tim
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-body-tertiary border-top py-4 text-center text-body-secondary mt-auto">
+    <div class="container small fw-semibold">
+      <p class="mb-0"><i class="bi bi-code-slash me-1"></i> Dibuat oleh Aubrey &middot; 25523196 &middot; PABW 2026</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="teamModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-bottom-0 bg-primary text-white rounded-top-4 py-3">
+          <h4 class="modal-title fw-bold" id="teamModalLabel">Nama Tim</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5 bg-body">
+          <h5 class="fw-bold mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Anggota Tim</h5>
+          <div id="modal-characters" class="d-flex flex-wrap gap-2 mb-4"></div>
+          
+          <h5 class="fw-bold mb-3"><i class="bi bi-controller text-primary me-2"></i>Cara Bermain & Rotasi</h5>
+          <p id="modal-guide" class="text-body-secondary mb-4 lh-lg"></p>
+          
+          <h5 class="fw-bold mb-3"><i class="bi bi-tools text-primary me-2"></i>Panduan Build Relic</h5>
+          <div class="bg-body-tertiary p-3 rounded-3 border">
+            <p id="modal-build" class="mb-0 font-monospace small" style="white-space: pre-wrap; line-height: 1.8;"></p>
+          </div>
+        </div>
+        <div class="modal-footer border-top-0 pt-0 pb-4 pe-4">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const temaSwitch = document.getElementById('temaSwitch');
+    temaSwitch.addEventListener('change', () => {
+      document.documentElement.setAttribute('data-bs-theme', temaSwitch.checked ? 'dark' : 'light');
+    });
+  </script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dom.js"></script>
+</body>
+</html>
